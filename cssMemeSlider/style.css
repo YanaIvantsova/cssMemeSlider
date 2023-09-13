@@ -4,11 +4,13 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-size: 1.5rem;
+    color:rgb(251, 253, 255);
 }
 
-h1{
+h1 {
     text-align: center;
     margin-bottom: 10px;
+    color: rgb(85, 85, 92);
 }
 
 body {
@@ -16,8 +18,7 @@ body {
 }
 
 .container {
-
-    background-color: blueviolet;
+    background-color: rgb(85, 85, 92);
     padding: 20px 15px 20px 15px;
     width: 630px;
     height: 800px;
@@ -44,19 +45,35 @@ body {
 
 .slider-controls {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin-top: 20px;
+    width: 100%;
 }
 
-/* .slide-description {
-    max-width: 70%;
-} */
+
+.slides-description {
+    overflow: hidden;
+    max-width: 390px;
+    width: 70%;
+    display: flex;
+}
+
+.slide-description1,
+.slide-description2,
+.slide-description3,
+.slide-description4,
+.slide-description5,
+.slide-description6 {
+    font-size: 1.2rem;
+    text-align: left;
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.5s ease-in-out;
+}
 
 .wrapper .slider-controls .pagination {
     display: flex;
-    justify-content: flex-end;
     gap: 7px;
+    width: 20%;
 }
 
 label {
@@ -76,12 +93,12 @@ span {
     width: 20px;
     border-radius: 50%;
     content: '';
-    background-color: rgb(183, 135, 227);
+    background-color: #b1e0f6;
     transition: .5s;
 }
 
 span:hover {
-    background-color: rgb(114, 114, 114);
+    background-color: rgb(255, 254, 254);
 }
 
 .slide img {
@@ -119,12 +136,39 @@ span:hover {
 #slide4:checked~.slider-controls label[for="slide4"] span,
 #slide5:checked~.slider-controls label[for="slide5"] span,
 #slide6:checked~.slider-controls label[for="slide6"] span {
-    border: 2px solid rgb(61, 61, 61);
-    background-color: rgb(255, 255, 255);
+
+    border: 2px solid white;
+    background-color: rgb(42, 158, 212);
 
     &:hover {
         border: 2px solid white;
         background-color: rgb(61, 61, 61);
         transition: .5s;
     }
+}
+
+#slide1:checked~.slider-controls .slides-description div {
+    transform: translateX(0);
+}
+
+#slide2:checked~.slider-controls .slides-description div {
+
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.slider-controls .slides-description div {
+
+    transform: translateX(-200%);
+}
+
+#slide4:checked~.slider-controls .slides-description div {
+    transform: translateX(-300%);
+}
+
+#slide5:checked~.slider-controls .slides-description div {
+    transform: translateX(calc(-400%));
+}
+
+#slide6:checked~.slider-controls .slides-description div {
+    transform: translateX(-500%);
 }
